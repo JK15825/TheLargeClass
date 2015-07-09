@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 
 public class Large 
@@ -302,8 +303,41 @@ public class Large
  	    }
  	    return false;
  	}
+ 	public static void print(Object b)
+ 	{
+ 		System.out.print(b);
+ 	}
+ 	public static void println(Object b)
+ 	{
+ 		System.out.println(b);
+ 	}
  	public static void main(String args[])
  	{
- 		Large l = new Large();
+ 		Large l;
+ 		Large l2;
+ 		
+ 		Scanner in = new Scanner(System.in);
+ 		println("We're gonna do some math.");
+ 		print("What is your first number? ");
+ 		l = new Large(in.nextLine());
+ 		print("What is your second number? ");
+ 		l2 = new Large(in.nextLine());
+ 		print("What would you like to do (*,+,-)? ");
+ 		String answer = in.nextLine();
+ 		if(answer.equals("*"))
+ 		{
+ 			l.mult(l2);
+ 		}
+ 		else if (answer.equals("+"))
+ 		{
+ 			l.add(l2);
+ 		}
+ 		else if(answer.equals("-"))
+ 		{
+ 			l.sub(l2);
+ 		}
+ 		println(l.getAmount("Your number is: "));
+ 		
+ 		
  	}
 }
