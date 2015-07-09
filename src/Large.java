@@ -4,6 +4,11 @@ import java.util.ArrayList;
 public class Large 
 {
 	ArrayList<Integer> num;
+	public Large()
+	{
+		num = new ArrayList<Integer>();
+		num.add(0);
+	}
 	public Large(String s)
 	{
 		String badChars = "abcdefghijklmnopqrstuvwxyz-+/'\"";
@@ -296,5 +301,9 @@ public class Large
  	    	}
  	    }
  	    return false;
+ 	}
+ 	public static void main(String args[])
+ 	{
+ 		Large l = new Large();
  	}
 }
