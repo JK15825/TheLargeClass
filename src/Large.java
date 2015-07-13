@@ -191,8 +191,23 @@ public class Large
 // TODO: FIX THIS	
 	public void div(Large l)
 	{
-		Large count = new Large("0");
-		Large temp =  l;
+		
+		//So i could subract until that number gets below the bigger one.
+		//this one seems more difficult and it's not working to begin with
+		
+		//or i could multiply the smaller one while it's still less than the bigger one.
+		Large count = new Larger(0);
+		do
+		{
+			Large temp = l;
+			count.add(new Large(1));
+			temp.mult(count);
+		}
+		while(isLarger(num,temp));
+		//i copied the same thing basically as below...
+		
+/*		Large count = new Large("0");
+		Large temp;;
 		do
 		{
 			temp =  l;
@@ -206,7 +221,7 @@ public class Large
 		for(int k = 0; k < count.getSize();  k++)
 		{
 			num.add(count.getDigit(k));
-		}
+		} */
 	}
 	// HELPER METHODS
 	public static int convertInt(String s, int i)
