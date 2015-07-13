@@ -192,10 +192,21 @@ public class Large
 	public void div(Large l)
 	{
 		
-		//So i could subract until that number gets below the bigger one.
-		//this one seems more difficult and it's not working to begin with
+		/*
+		  So i could subract until that number gets below the bigger one.
+		  this one seems more difficult and it's not working to begin with
+		  THE FANCY KU TEACHER SAID TO SUBTRACT THE LARGER ONE AND TO CONTINUE WHILE IT'S STILL
+		  GREATER THAN THE SMALLER ONE 
+		*/
+		Large count = new Large(0)
+		Large temp = new Large(num);
+		while(!isLarger(temp,l))
+		{
+			count.add(new Large(1));
+			temp.sub(l);
+		}
 		
-		//or i could multiply the smaller one while it's still less than the bigger one.
+		/*or i could multiply the smaller one while it's still less than the bigger one.
 		Large count = new Larger(0);
 		do
 		{
@@ -204,7 +215,7 @@ public class Large
 			temp.mult(count);
 		}
 		while(isLarger(num,temp));
-		//i copied the same thing basically as below...
+		//i copied the same thing basically as below... */
 		
 /*		Large count = new Large("0");
 		Large temp;;
@@ -216,12 +227,12 @@ public class Large
 		}
 		while(isLarger(num,temp));
 //		temp =  l;
-//		temp.mult(count);
+//		temp.mult(count); */
 		num = new ArrayList<Integer>();
 		for(int k = 0; k < count.getSize();  k++)
 		{
 			num.add(count.getDigit(k));
-		} */
+		} 
 	}
 	// HELPER METHODS
 	public static int convertInt(String s, int i)
